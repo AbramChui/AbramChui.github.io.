@@ -138,6 +138,21 @@ body.dark{--bg:#111923;--ink:#e7edf4;--muted:#a8b5c4;--line:#2c3948;--blue:#91b8
 body.dark .noise-line{stroke:#70b7f5}body.dark .anti-line{stroke:#f0a276}body.dark .result-line{stroke:#69c9a6}
 @media(max-width:520px){.wave-row{grid-template-columns:1fr;gap:2px}.wave-svg{height:auto}.demo-controls{grid-template-columns:1fr}.demo-result{align-items:flex-start;flex-direction:column;gap:5px}.demo-summary-note{display:none}}
 
+
+/* Hubble project spectral-fit gallery */
+.hubble-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.hubble-figure{margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--white)}
+.hubble-figure img{display:block;width:100%;height:auto;aspect-ratio:1.32;object-fit:contain;background:#fff}
+.hubble-figure figcaption{padding:9px 10px;color:var(--muted);font-size:.76rem;line-height:1.45}
+.hubble-details{margin:16px 0 12px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.hubble-details summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;font-size:.86rem;font-weight:700}
+.hubble-details summary::-webkit-details-marker{display:none}
+.hubble-details summary:after{content:'+';color:var(--blue);font-size:1.15rem}
+.hubble-details[open] summary:after{content:'−'}
+.hubble-details-content{padding:0 14px 14px}
+.hubble-note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+@media(max-width:720px){.hubble-gallery{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -165,7 +180,7 @@ body.dark .noise-line{stroke:#70b7f5}body.dark .anti-line{stroke:#f0a276}body.da
   </div>
 </details>
 <div class="actions" style="margin-top:16px"><a class="btn secondary" href="https://www.imperial.ac.uk/physics/engage-with-us/outreach/" target="_blank" rel="noreferrer">View project on Imperial Physics ↗</a><a class="btn secondary" href="https://github.com/AbramChui/DANC-Directional-Active-Noise-Cancellation-" target="_blank" rel="noreferrer">View project repository ↗</a></div></article>
-<article class="card"><div class="top"><span class="tag"><span>Scientific data analysis</span></span><span class="date">2026</span></div><h3>Measuring the Hubble Constant</h3><p><span>Analysed galaxy spectra to estimate recession velocities and investigate the relationship between distance and velocity. Used Gaussian fitting to locate spectral lines, applied relativistic velocity calculations and performed weighted linear regression.</span></p><div class="meta">Python · NumPy · pandas · SciPy · Curve fitting</div><p><span>Obtained an estimate of approximately 70.3 ± 4.9 km s⁻¹ Mpc⁻¹ from the dataset.</span></p></article>
+<article class="card"><div class="top"><span class="tag"><span>Scientific data analysis</span></span><span class="date">2026</span></div><h3>Measuring the Hubble Constant</h3><p><span>Analysed galaxy spectra to estimate recession velocities and investigate the relationship between distance and velocity. Fitted Hβ spectral features using Gaussian profiles with linear backgrounds, propagated fitted-frequency uncertainties into velocity estimates, and compared the resulting velocities with galaxy distances.</span></p><div class="meta">Python · NumPy · pandas · SciPy · Matplotlib · Curve fitting</div><details class="hubble-details"><summary>Explore representative spectral fits</summary><div class="hubble-details-content"><p class="hubble-note">Three examples selected from the spectral-fit plots available in this conversation, illustrating a clear peak, a sloping continuum and a more structured background.</p><div class="hubble-gallery"><figure class="hubble-figure"><img src="spectral-fit-clean.png" alt="Observed spectrum with Gaussian plus linear-background fit, clear emission peak"><figcaption>Clear spectral feature — a relatively distinct peak above the background.</figcaption></figure><figure class="hubble-figure"><img src="spectral-fit-typical.png" alt="Noisy observed spectrum with Gaussian plus linear-background fit and sloping continuum"><figcaption>Sloping continuum — the linear term accounts for the changing local background.</figcaption></figure><figure class="hubble-figure"><img src="spectral-fit-background.png" alt="Observed spectrum with Gaussian plus linear-background fit and changing background"><figcaption>More structured spectrum — illustrates fitting in the presence of a changing baseline.</figcaption></figure></div></div></details><p><span>The fitted line centres were converted into recession velocities using the relativistic Doppler relation. A distance–velocity plot was then used to estimate the Hubble constant through linear regression.</span></p><p class="hubble-note">The original analysis reported an estimate of approximately 70.3 km s⁻¹ Mpc⁻¹; the regression weighting and uncertainty are being checked before presenting a final uncertainty.</p><div class="actions" style="margin-top:16px"><a class="btn secondary" href="https://github.com/AbramChui/Hubble_constant_estimation" target="_blank" rel="noreferrer">View analysis on GitHub ↗</a></div></article>
 </div></div></section>
 <section class="content" id="experience"><div class="wrap"><div class="head"><div class="label">03 / Experience</div><div><h2>Learning through experience</h2><p class="intro">Exposure to practical production environments and collaborative technical projects.</p></div></div>
 <div class="entry"><div class="entry-date">Work placement</div><div><h3>Silent Gliss International Ltd</h3><div class="sub"><span>Manufacturing and production operations</span></div><p><span>Gained experience across manufacturing stages including cutting, forming, bending, assembly and packaging. Observed how production orders, materials, work-in-progress and queues are coordinated, developing an appreciation for process control, precision and practical problem-solving.</span></p></div></div>
